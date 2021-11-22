@@ -1,5 +1,9 @@
 version: '3'
 
+networks:
+  monitoring:
+
+    null
 services:
 
   grafana:
@@ -8,9 +12,13 @@ services:
       - 3000:3000
     depends_on:
       - prometheus
+    networks:
+      - monitoring
 
   prometheus:
     build: ./prometheus
     image: irrigation-springler-log-monitor/prometheus
     ports:
       - 9090:9090
+    networks:
+      - monitoring
