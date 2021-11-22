@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - 3000:3000
+    depends_on:
+      - prometheus
+
+  prometheus:
+    build: ./prometheus
+    image: irrigation-springler-log-monitor/prometheus
+    ports:
+      - 9090:9090
