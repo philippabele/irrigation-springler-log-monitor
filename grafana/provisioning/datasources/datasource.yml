@@ -4,3 +4,6 @@ datasources:
   - name: Prometheus
     type: prometheus
     url: http://prometheus:9090
+  - name: spring-actuator
+    type: spring-actuator
+    url: http://prometheus:9090
